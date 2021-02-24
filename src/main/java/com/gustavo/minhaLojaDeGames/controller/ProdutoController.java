@@ -28,12 +28,12 @@ public class ProdutoController {
 	private ProdutoRepository repository;
 
 	@GetMapping
-	public ResponseEntity<List<Produto>> getall() {
+	public ResponseEntity<List<Produto>> getAll() {
 		return ResponseEntity.ok(repository.findAll());
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<Produto> GetById(@PathVariable long id) {
+	public ResponseEntity<Produto> getById(@PathVariable long id) {
 		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
 
