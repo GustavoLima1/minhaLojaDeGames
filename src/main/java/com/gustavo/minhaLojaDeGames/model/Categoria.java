@@ -10,19 +10,15 @@ import javax.validation.constraints.Size;
 import com.sun.istack.NotNull;
 
 @Entity
-@Table (name = "tb_categoria")
+@Table(name = "tb_categoria")
 public class Categoria {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@NotNull
-	@Size( min = 2, max = 25)
-	private String console;
-	
-	@NotNull
-	@Size( min = 2, max = 25)
+	@Size(min = 2, max = 25)
 	private String categoria;
 
 	public long getId() {
@@ -33,14 +29,6 @@ public class Categoria {
 		this.id = id;
 	}
 
-	public String getConsole() {
-		return console;
-	}
-
-	public void setConsole(String console) {
-		this.console = console;
-	}
-
 	public String getCategoria() {
 		return categoria;
 	}
@@ -48,9 +36,5 @@ public class Categoria {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
-	
-	
-	
-	
 
 }
